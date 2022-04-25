@@ -1,17 +1,17 @@
 {
-  "name": "33-grupe-node-spa",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "modules.js",
-  "scripts": {
-    "dev": "dead-server --port=3001 --host=localhost",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "D": "^1.0.0"
-  }
-}
+  "pavadinimas" : " 33-grupe-node-spa " ,
+  "versija" : " 1.0.0 " ,
+  "description" : " " ,
+  "main" : " index.js " ,
+  "type" : " modulis " ,
+  "skriptai" : {
+  "dev" : " nodemon " ,
+  "testas" : " echo \" Klaida: nenurodytas testas \" && išeiti 1 "
+ },
+  "raktiniai žodžiai" : [],
+  "autorius" : " Rimantas " ,
+  "licencija" : " MIT " ,
+  "Dependencies" : {
+  "nodemon" : " ^2.0.15 "
+ }
+ }
