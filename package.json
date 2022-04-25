@@ -1,0 +1,17 @@
+{
+  "name": "33-grupe-node-spa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "modules.js",
+  "scripts": {
+    "dev": "dead-server --port=3001 --host=localhost",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "D": "^1.0.0"
+  }
+}
