@@ -3,12 +3,15 @@ import { server } from "./lib/server.js";
 const app = {};
 
 app.init = () => {
-    // pairuosti pradinius folderoius
-    // pasiruo6ti pradinius failus
+    // pasiruosti pradinius folderius
+    // pasiruosti pradinius failus
     // prisijungti prie DB
-    // pasileisti serverio logika (jei duoti prieiga prie DB)
-    console.log('pasileidinejame serveri...');
+    // pasileisti serverio logika (jai duoti prieiga prie DB)
+    server.init();
+
     // reguliariu procesu paleidimas
 }
-app.onit();
+
+app.init();
+
 export { app };
