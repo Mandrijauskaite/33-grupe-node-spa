@@ -11,5 +11,32 @@ body {
         sans-serif;
 }
 
+/* custom properties, a.k.a. CSS variables */
 :root {
+    --primary-color: #f34879;
+    --secondary-color: #fd685f;
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color);
+}
+
+.bg-gradient {
+    background: linear-gradient(
+        180deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 100%
+    );
+}
+
+img {
+    width: 100%;
+}
+
+footer {
+    background-color: #eee;
 }
