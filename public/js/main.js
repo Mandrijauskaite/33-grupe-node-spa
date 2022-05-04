@@ -12,3 +12,12 @@ import { PageRegister } from "./pages/PageRegister.js";
 
 const pageObj = new PageHome();
 pageObj.render();
+
+router.notFoundRoute = Page404;
+
+router.addRoute('', PageHome);
+router.addRoute('404', Page404);
+router.addRoute('login', PageLogin);
+router.addRoute('register', PageRegister);
+
+router.init();
