@@ -1,15 +1,16 @@
 const router = {};
 
-router.domain = 'localhost';
-
 router.routes = {};
+
+router.domain = 'localhost';
 
 router.notFoundRoute = null;
 
-router.formatedURL = (link) => {
+router.formatedURL = (pathname) => {
+    let link = pathname;
     let start = 0;
     let end = link.length;
-    if (link[0] === '/') {
+    if (link[start] === '/') {
         start = 1;
     }
     if (link[end - 1] === '/') {
@@ -23,21 +24,38 @@ router.addRoute = (link, handler) => {
     router.routes[formatedLink] = handler;
 }
 
+router.goToRoute = async (link) => {
+    const formatedLink = router.formatedURL(link);
+    const handler = router.routes[formatedLink];
+    if (handler) {
+        await (new handler()).render();
+        return router.init();
+    }
+    if (router.notFoundRoute) {
+        await (new router.notFoundRoute()).render();
+        return router.init();
+    }
+    throw new Error('No route to go to');
+}
+
 router.init = () => {
     const allLinks = document.querySelectorAll('a');
 
-    if (allLinks.length === 0) {
-        return;
-    }
-
     for (const link of allLinks) {
-        link.addEventListener('click', (e) => {
+        link.addEventListener('click', e => {
             if (link.hostname === router.domain) {
+                e.stopPropagation();
                 e.preventDefault();
                 const { pathname } = link;
                 history.pushState({ pathname }, '', pathname);
+                router.goToRoute(pathname);
             }
         })
+    }
+
+    // grizimo i pries tai buvusi puslapi mechanizmas
+    window.onpopstate = e => {
+        router.goToRoute(e.state);
     }
 }
 

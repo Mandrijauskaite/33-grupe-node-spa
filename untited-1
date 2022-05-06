@@ -1,0 +1,24 @@
+REGISTER PAGE
+
+FONT
+-forma
+-susirandam visus laukus
+-susirandam mygtuka
+-mygtukas + event listener
+-nuskaitome ivesties laukuose esancius tekstus
+-suformuojame pirminiu duomenu objekta
+-validuojame siuo metu formoje esancia info
+-suformuojame galutiniu duomenu objektajei buvo klaidu - atvaizuojame
+-jei klaidu buvo - atvaizuodame
+-jei klaidu nebuvo - siunciame duomenis (JSON formatu) serveri (API)
+
+
+BACK
+-gaunam duomrenu "objekta" (JSON stringa)
+-parsiname (atstatome) JSON i "originalu" objekta
+-validuojame gauta objekta
+-jei gavome netinkama objekta - graziname klaidos pranesima
+-jei gavome tinkama - darom kas suplanuota pagal gauta API ir grazinam pranesima
+
+FRONT
+-atvaizduojame gauta atsakyma is BACK'o
