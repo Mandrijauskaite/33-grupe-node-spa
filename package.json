@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll --passWithNoTests"
   },
   "keywords": [],
   "author": "Rimantas",
   "license": "MIT",
   "devDependencies": {
+    "jest": "^28.1.0",
     "nodemon": "^2.0.15"
   }
 }
